@@ -1,0 +1,95 @@
+body{
+    background: whitesmoke;
+}
+.data{
+    margin:auto;
+    width: 75%;
+    padding: 10px;
+}
+.center_form{
+    margin-left:auto;
+    margin-right: auto;
+}
+.center_form h1{
+    font-family: 'League Spartan Bold', Arial;
+    font-size: 44px;
+}
+.header_logo img{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    width: 200px;
+    height: 150px;
+}
+.info_area{
+    margin-top: 15px;
+    margin-right: 40px;
+    color: #226437;
+    font-size: 17px;
+    width: 350px;
+}
+.register_form{
+    font-family: Ebrima;
+    background: #226437;
+    font-size: 14px;
+}
+.data_form{
+    margin-right: 20px;
+    margin-left: 20px;
+    color: #226437;
+}
+.data_form h1{
+    font-size: 32px;
+    color: whitesmoke;
+    margin-top: 20px;
+}
+.data_form a{
+    font-weight: 700;
+    color: whitesmoke;
+}
+.inputFields{
+    margin: 15px 0;
+    padding: 10px;
+
+    border: 1px solid #226437;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: whitesmoke;
+    color: #226437;
+    outline: none;
+}
+.noBullet{
+    list-style-type: none;
+    padding: 0;
+}
+#join_btn{
+    border: 1px solid #226437;
+    background: whitesmoke;
+    font-size: 16px;
+    color: #226437;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+::placeholder{
+    color: #226437;
+    opacity: 1;
+}
+
+.checkboxes label {
+    color: whitesmoke;
+    display: block;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-indent: +10px;
+
+}
+.checkboxes input {
+
+
+}
+.checkboxes label span {
+    vertical-align: middle;
+
+}
