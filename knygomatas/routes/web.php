@@ -17,6 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [KnygomatasController::class, 'index'])->name('index');
 Route::resource('knygomatas', KnygomatasController::class);
 Route::get('valdymas', [KnygomatasController::class, 'show'])->name('show');
-
-
+Route::get('changeStatus', [KnygomatasController::class, 'ChangeUserStatus'])->name('ChangeUserStatus');
 

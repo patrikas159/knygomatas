@@ -39,16 +39,11 @@ class KnygomatasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'reader_id' =>'required',
-            'reader_phone'=>'required',
 
-        ]);
 
         $knygomatas =  new Knygomatas();
         $knygomatas->reader_id = $request->reader_id;
         $knygomatas->reader_phone= $request->reader_phone;
-
         $knygomatas->save();
 
         return view('index', compact('knygomatas'));
@@ -71,34 +66,26 @@ class KnygomatasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $knygomatas = Knygo::findOrFail($id);
-        $statuses = [
-            [
-                'label' => 'Laukiama',
-                'value' => 'Laukiama',
-            ],
-            [
-                'label' => 'Atlikta',
-                'value' => 'Atlikta',
-            ]
-        ];
-        return view('valdymas', compact('statuses', 'knygomatas'));
+
 
 
     }
+
+
 
     /**
      * Update the specified resource in storage.
      *
      * @return \Illuminate\Http\Response
      */
-    public function update()
+
+    public function update(Request $request)
     {
+
 
     }
 
@@ -114,13 +101,14 @@ class KnygomatasController extends Controller
         $knygomatas->delete();
         return redirect('valdymas');
     }
-    public function completed($id)
-    {
-        $task_complete = Knygomatas::find($id) ;
-        $task_complete->completed = 1;
-        $task_complete->save() ;
-        return redirect()->back();
-    }
 
+    public function changeUserStatus(Request $request)
+    {
+        $knygomatas = Knygomatas::find($request->id);
+        $knygomatas->statuses = $request->statuses;
+        $knygomatas->save();
+
+        return response()->json(['success'=>'User status change successfully.']);
+    }
 
 }

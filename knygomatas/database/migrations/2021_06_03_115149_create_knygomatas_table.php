@@ -17,7 +17,9 @@ class CreateKnygomatasTable extends Migration
             $table->id();
             $table->string('reader_id');
             $table->char('reader_phone');
-            $table->enum('status', ['Laukiama', 'Atlikta'])->default('Laukiama');
+            $table->enum('status', ['Laukiama', 'Atlikta']);
+            $table->integer('statuses')->default(0);
+            $table->boolean('statuse')->nullable($value = true);
             $table->timestamps();
         });
 
